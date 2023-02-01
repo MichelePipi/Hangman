@@ -12,6 +12,7 @@ class Game:
     def play_game(self):
         while True:
             print(hangman_pics[self.guess_count])
+            print(self.current_word)
             print("GUESS COUNT:", self.guess_count)
             guess = input("GUESS: ").lower()
             if guess in self.guesses:
