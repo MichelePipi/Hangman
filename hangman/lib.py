@@ -17,7 +17,7 @@ def fetch_words() -> list:
 
 def filter_words(words: list) -> list:
     """Filter words based on length"""
-    return [word for word in words if 4 <= len(word) <= 9]
+    return [word for word in words if 4 <= len(word) <= 7]
 
 
 def find_occurrences(secret_word, guess) -> list:
