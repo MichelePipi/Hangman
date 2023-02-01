@@ -1,3 +1,4 @@
+import math
 from random import choice
 from lib import *
 
@@ -8,11 +9,13 @@ class Game:
         self.guesses = None
         self.secret_word = None
         self.words = filter_words(fetch_words())
+        self.max_guesses = None
         self.start_game()
     def play_game(self):
         while True:
-            print(hangman_pics[self.guess_count])
+            print(hangman_pics[math.floor(self.guess_count/2)])
             print(self.current_word)
+            print('You have', self.max_guesses - self.guess_count, 'guesses left')
             print("GUESS COUNT:", self.guess_count)
             guess = input("GUESS: ").lower()
             if guess in self.guesses:
@@ -22,9 +25,10 @@ class Game:
                 print("Enter one ALPHABETIC character.")
                 continue
             guess_occurrences = find_occurrences(self.secret_word, guess)
+            self.guesses.append(guess)
             if len(guess_occurrences) == 0:
                 self.guess_count = self.guess_count + 1
-                if self.guess_count == len(self.secret_word) + 3:
+                if self.guess_count == self.max_guesses:
                     print("You have LOST.")
                     break
             for occurrence in guess_occurrences:
@@ -45,4 +49,5 @@ class Game:
                 self.guesses = []
                 self.guess_count = 0
                 self.current_word = '-' * len(self.secret_word)
+                self.max_guesses = len(self.secret_word) + 4
                 self.play_game()
