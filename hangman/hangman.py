@@ -1,5 +1,5 @@
-from lib import *
 from random import choice
+from lib import *
 
 class Game:
     def __init__(self):
