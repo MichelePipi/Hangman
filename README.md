@@ -2,8 +2,8 @@
 
 ## Requirements
 - Python 3
-- requirements.txt packages installed
+- requests
 
 ## Instructions to Run
-Install the required packages from the requirements.txt file with pip: `pip install -r requirements.txt`
+Install the required package with pip: `pip install requests`
 Run with `python3 main.py` in the hangman/ folder
