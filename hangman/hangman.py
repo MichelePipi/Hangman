@@ -3,11 +3,11 @@ from lib import *
 
 class Game:
     def __init__(self):
-        words = filter_words(fetch_words())
-        self.guess_count = 0
-        self.secret_word = choice(words)
-        self.current_word = '-' * len(self.secret_word)
-        self.guesses = []
+        self.current_word = None
+        self.guess_count = None
+        self.guesses = None
+        self.secret_word = None
+        self.words = filter_words(fetch_words())
         self.start_game()
     def play_game(self):
         while True:
@@ -41,4 +41,8 @@ class Game:
             if play_choice == 'exit':
                 stop_playing = True # Stop playing
             else:
+                self.secret_word = choice(self.words)
+                self.guesses = []
+                self.guess_count = 0
+                self.current_word = '-' * len(self.secret_word)
                 self.play_game()
