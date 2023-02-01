@@ -1,4 +1,4 @@
-from Hangman import Game
+from hangman import Game
 
 
 def run_hangman() -> None:
