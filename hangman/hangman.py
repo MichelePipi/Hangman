@@ -13,7 +13,7 @@ class Game:
         while True:
             print(hangman_pics[self.guess_count])
             print("GUESS COUNT:", self.guess_count)
-            guess = input("GUESS: ")
+            guess = input("GUESS: ").lower()
             if guess in self.guesses:
                 print("You have already GUESSED that.")
                 continue

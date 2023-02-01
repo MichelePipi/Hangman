@@ -28,7 +28,7 @@ def find_occurrences(secret_word, guess) -> list:
 
 
 def verify_input(guess: str) -> bool:
-    return len(guess) != 1 or not bool(re.match('[a-z]', guess.lower()))
+    return len(guess) == 1 and bool(re.match('[a-z]', guess))
 
 
 def replace_char_in_string(index, string, replace) -> str:
