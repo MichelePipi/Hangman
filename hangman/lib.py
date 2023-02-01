@@ -37,6 +37,12 @@ def replace_char_in_string(index, string, replace) -> str:
     return "".join(listed_string)
 
 
+def format_guesses(count: int) -> str:
+    if count > 2 or count == 0:
+        return 'INCORRECT GUESSES'
+    return 'INCORRECT GUESS'
+
+
 hangman_pics = ['''
   +---+
   |   |

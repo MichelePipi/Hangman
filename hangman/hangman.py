@@ -30,7 +30,7 @@ class Game:
             for occurrence in guess_occurrences:
                 self.current_word = replace_char_in_string(occurrence, self.current_word, guess)
             if self.current_word == self.secret_word:
-                print("You WON in", self.guess_count, 'GUESS(ES).')
+                print("You WON WITH", self.guess_count, format_guesses(self.guess_count))
                 break
 
     def start_game(self):
@@ -45,4 +45,5 @@ class Game:
                 self.guesses = []
                 self.guess_count = 0
                 self.current_word = '-' * len(self.secret_word)
+                print(self.secret_word)
                 self.play_game()
