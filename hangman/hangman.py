@@ -45,5 +45,4 @@ class Game:
                 self.guesses = []
                 self.guess_count = 0
                 self.current_word = '-' * len(self.secret_word)
-                print(self.secret_word)
                 self.play_game()
