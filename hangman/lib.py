@@ -4,7 +4,7 @@ import requests, re, sys
 def fetch_words() -> list:
     """Fetches the 1000 most popular US English words from a URL"""
     print("Fetching words list...", end='')
-    url = 'https://gist.githubusercontent.com/deekayen/4148741/raw/98d35708fa344717d8eee15d11987de6c8e26d7d/1-1000.txt'
+    url = 'https://ftp.michelepip.xyz/Hangman/static/words_list.txt'
     try:
         response = requests.get(url)
     except requests.exceptions.RequestException:
