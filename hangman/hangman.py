@@ -24,7 +24,7 @@ class Game:
             guess_occurrences = find_occurrences(self.secret_word, guess)
             if len(guess_occurrences) == 0:
                 self.guess_count = self.guess_count + 1
-                if self.guess_count == 6:
+                if self.guess_count == len(self.secret_word) + 3:
                     print("You have LOST.")
                     break
             for occurrence in guess_occurrences:
