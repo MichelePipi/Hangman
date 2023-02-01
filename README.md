@@ -6,4 +6,4 @@
 
 ## Instructions to Run
 Install the required packages from the requirements.txt file with pip: `pip install -r requirements.txt`
-Run with `python3 main.py`
+Run with `python3 main.py` in the hangman/ folder
