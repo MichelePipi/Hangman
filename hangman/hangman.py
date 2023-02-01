@@ -13,7 +13,11 @@ class Game:
         self.start_game()
     def play_game(self):
         while True:
-            print(hangman_pics[math.floor(self.guess_count/2)])
+
+            try:
+                print(hangman_pics[math.floor(self.guess_count/2)])
+            except IndexError:
+                print(hangman_pics[6])
             print(self.current_word)
             print('You have', self.max_guesses - self.guess_count, 'guesses left')
             print("GUESS COUNT:", self.guess_count)
