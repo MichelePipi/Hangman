@@ -22,6 +22,7 @@ def filter_words(words: list) -> list:
 
 def find_occurrences(secret_word: str, guess: str) -> list:
     """Finds the occurrences of the guess in the secret word and outputs a list of indexes where the guess is found."""
+    # TODO: ADD DIFFICULTIES [Easy: 4 letter words, Medium: 4-5 letter words, Hard: 4-6 letter words, Impossible: 6 letter words]
     return [i for i in range(len(secret_word)) if guess == secret_word[i]]
 
 
