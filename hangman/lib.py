@@ -4,7 +4,7 @@ import requests, re, sys
 def fetch_words() -> list:
     """Fetches the 1000 most popular US English words from a URL"""
     print("Fetching words list...", end='')
-    url = 'https://ftp.michelepip.xyz/Hangman/static/words_list.txt'
+    url = 'https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english-no-swears.txt'
     try:
         response = requests.get(url) # Try to grab words list
     except requests.exceptions.RequestException: # Error retrieving words list [wifi error most likely]
