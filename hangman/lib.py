@@ -1,4 +1,4 @@
-import requests, re, sys
+import requests, re, sys, random
 
 
 def fetch_words() -> list:
@@ -20,7 +20,7 @@ def filter_words(words: list) -> list:
     return [word for word in words if 4 <= len(word) <= 5] # For each word in words list, remove every occurrence <4 len or >5 len
 
 
-def find_occurrences(secret_word, guess) -> list:
+def find_occurrences(secret_word: str, guess: str) -> list:
     """Finds the occurrences of the guess in the secret word and outputs a list of indexes where the guess is found."""
     return [i for i in range(len(secret_word)) if guess == secret_word[i]]
 
@@ -30,7 +30,7 @@ def verify_input(guess: str) -> bool:
     return len(guess) == 1 and bool(re.match('[a-z]', guess))
 
 
-def replace_char_in_string(index, string, replace) -> str:
+def replace_char_in_string(index: int, string: str, replace: str) -> str:
     listed_string = list(string) # Convert string into a list
     listed_string[index] = replace # Replace the char in the string
     return "".join(listed_string) # Convert the list back into a string
@@ -41,6 +41,10 @@ def format_win_string(count: int) -> str:
     if count > 2 or count == 0: # Plural or 0
         return 'INCORRECT GUESSES'
     return 'INCORRECT GUESS'
+
+
+def choose_secret_word(words: list) -> str:
+    return random.choice(words)
 
 
 hangman_pics = ['''

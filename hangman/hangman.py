@@ -51,7 +51,7 @@ class Game:
                 stop_playing = True # Stop playing
             else:
                 """INIT ALL VALUES"""
-                self.secret_word = choice(self.words)
+                self.secret_word = choose_secret_word(self.words)
                 self.guesses = []
                 self.incorrect_guess_count = 0
                 self.current_guessed_word = '-' * len(self.secret_word)
