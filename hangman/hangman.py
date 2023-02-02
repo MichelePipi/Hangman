@@ -55,5 +55,5 @@ class Game:
                 self.guesses = []
                 self.incorrect_guess_count = 0
                 self.current_guessed_word = '-' * len(self.secret_word)
-                self.max_guesses = len(self.secret_word) + 4
+                self.max_guesses = find_max_guesses(self.secret_word)
                 self.play_game()

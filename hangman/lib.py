@@ -45,7 +45,20 @@ def format_win_string(count: int) -> str:
 
 
 def choose_secret_word(words: list) -> str:
+    """Choose the secret word for the game."""
     return random.choice(words)
+
+
+def find_max_guesses(word: str) -> int:
+    match len(word):
+        case 4:
+            return 9
+        case 5:
+            return 12
+        case 6:
+            return 15
+        case _:
+            return 11
 
 
 hangman_pics = ['''
